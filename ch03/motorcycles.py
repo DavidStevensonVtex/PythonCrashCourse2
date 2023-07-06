@@ -65,3 +65,13 @@ too_expensive = 'ducati'
 motorcycles.remove(too_expensive)
 print(f"\nA {too_expensive.title()} is to expensive for me.")
 # A Ducati is to expensive for me.
+
+# Avoiding Index Errors When Working with Lists
+motorcycles = [ 'honda', 'yamaha', 'suzuki' ]
+# print(motorcycles[3])
+# Traceback (most recent call last):
+#   File "D:\drs\Python\PythonCrashCourse2\ch03\motorcycles.py", line 71, in <module>
+#     print(motorcycles[3])
+# IndexError: list index out of range
+print(motorcycles[-1])
+# suzuki
