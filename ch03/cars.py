@@ -29,3 +29,9 @@ print(cars)
 
 # Here is the original list again:
 # ['bmw', 'audi', 'toyota', 'subaru']
+
+# Printing a List in Reverse Order
+cars = [ 'bmw', 'audi', 'toyota', 'subaru' ]
+cars.reverse()
+print(cars)
+# ['subaru', 'toyota', 'audi', 'bmw']
