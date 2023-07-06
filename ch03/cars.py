@@ -35,3 +35,8 @@ cars = [ 'bmw', 'audi', 'toyota', 'subaru' ]
 cars.reverse()
 print(cars)
 # ['subaru', 'toyota', 'audi', 'bmw']
+
+# Finding the Length of a List
+
+cars = [ 'bmw', 'audi', 'toyota', 'subaru' ]
+print(len(cars))        # 4
