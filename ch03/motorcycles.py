@@ -59,3 +59,9 @@ motorcycles = ['ducati', 'honda', 'yamaha', 'suzuki']
 motorcycles.remove('ducati')
 print(motorcycles)
 # ['honda', 'yamaha', 'suzuki']
+
+motorcycles = ['honda', 'yamaha', 'ducati', 'suzuki']
+too_expensive = 'ducati'
+motorcycles.remove(too_expensive)
+print(f"\nA {too_expensive.title()} is to expensive for me.")
+# A Ducati is to expensive for me.
