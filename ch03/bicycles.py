@@ -11,3 +11,7 @@ print(bicycles[1])
 print(bicycles[3])
 # cannondale
 # specialized
+
+# Print last element of the list using index -1
+print(bicycles[-1])
+# specialized
