@@ -23,7 +23,7 @@ print(motorcycles)
 motorcycles = [ 'honda', 'yamaha', 'suzuki' ]
 motorcycles.insert(0, 'ducati')
 print(motorcycles)
-['ducati', 'honda', 'yamaha', 'suzuki']
+# ['ducati', 'honda', 'yamaha', 'suzuki']
 
 # Removing an Item using the del Statement
 motorcycles = [ 'honda', 'yamaha', 'suzuki' ]
@@ -53,3 +53,9 @@ motorcycles = [ 'honda', 'yamaha', 'suzuki' ]
 first_owned = motorcycles.pop(0)
 print(f"The first motorcycle I owned was a {first_owned.title()}")
 # The first motorcycle I owned was a Honda
+
+# Removing an Item by Value
+motorcycles = ['ducati', 'honda', 'yamaha', 'suzuki']
+motorcycles.remove('ducati')
+print(motorcycles)
+# ['honda', 'yamaha', 'suzuki']
