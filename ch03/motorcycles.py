@@ -32,3 +32,13 @@ del motorcycles[0]
 print(motorcycles)
 # ['honda', 'yamaha', 'suzuki']
 # ['yamaha', 'suzuki']
+
+# Removing an Item Using the pop() Method
+motorcycles = [ 'honda', 'yamaha', 'suzuki' ]
+print(motorcycles)
+popped_motorcycle = motorcycles.pop()
+print(motorcycles)
+print(popped_motorcycle)
+# ['honda', 'yamaha', 'suzuki']
+# ['honda', 'yamaha']
+# suzuki
