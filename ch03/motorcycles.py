@@ -18,3 +18,9 @@ motorcycles.append('yamaha')
 motorcycles.append('suzuki')
 print(motorcycles)
 # ['honda', 'yamaha', 'suzuki']
+
+# Inserting Elements into a list
+motorcycles = [ 'honda', 'yamaha', 'suzuki' ]
+motorcycles.insert(0, 'ducati')
+print(motorcycles)
+['ducati', 'honda', 'yamaha', 'suzuki']
