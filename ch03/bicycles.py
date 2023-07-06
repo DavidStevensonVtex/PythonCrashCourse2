@@ -15,3 +15,8 @@ print(bicycles[3])
 # Print last element of the list using index -1
 print(bicycles[-1])
 # specialized
+
+# Using Individual Values from a List
+message = f"My first bicycle was a {bicycles[0].title()}"
+print(message)
+# My first bicycle was a Trek
