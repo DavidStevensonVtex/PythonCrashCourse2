@@ -1,8 +1,9 @@
-for value in range(1, 5):
+for value in range(1, 6):
     print(value)
 
-# This doesn't print the number 5
+# This prints the number range 1 to 5 inclusive:
 # 1
 # 2
 # 3
 # 4
+# 5
