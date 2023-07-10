@@ -5,6 +5,9 @@ print(dimensions[0])
 print(dimensions[1])
 print(dimensions)
 
+for dimension in dimensions:
+    print(dimension)
+
 # 200
 # 50
 # (200, 50)
