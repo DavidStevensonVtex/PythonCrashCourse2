@@ -1,5 +1,5 @@
 my_foods = [ 'pizza', 'falafel', 'carrot cake' ]
-friend_foods = my_foods[:]
+friend_foods = my_foods     # This doesn't work. A list reference is copied, and a new list is not made.
 my_foods.append('cannoli')
 friend_foods.append('ice cream')
 
