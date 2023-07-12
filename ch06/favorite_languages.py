@@ -66,3 +66,8 @@ for language in set(favorite_languages.values()):
 # Python
 # Ruby
 # C
+
+# You can build a set directly using braces and separating the elements with commas.
+languages = { 'python', 'ruby', 'python', 'c' }
+print(f"\n\nlanguages: {languages}")
+# languages: {'c', 'python', 'ruby'}
