@@ -29,3 +29,18 @@ for name in favorite_languages.keys():
 # Sarah
 # Edward
 # Phil
+print("\n")
+friends = [ 'phil', 'sarah' ]
+for name in favorite_languages.keys():
+    print(f"Hi {name.title()}.")
+
+    if name in friends:
+        language = favorite_languages[name].title()
+        print(f"\t{name.title()}, I see you love {language}")
+
+# Hi Jen.
+# Hi Sarah.
+#         Sarah, I see you love C
+# Hi Edward.
+# Hi Phil.
+#         Phil, I see you love Python
