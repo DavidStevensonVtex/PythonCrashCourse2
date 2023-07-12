@@ -13,6 +13,10 @@ print(f"Sarah's favorite language is {language}\n")
 for name, language in favorite_languages.items():
     print(f"{name.title()}'s favorite language is {language.title()}")
 
+print("\n")
+for name in favorite_languages.keys():
+    print(name.title())
+
 # {'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python'}
 # Sarah's favorite language is C
 
@@ -20,3 +24,8 @@ for name, language in favorite_languages.items():
 # Sarah's favorite language is C
 # Edward's favorite language is Ruby
 # Phil's favorite language is Python
+
+# Jen
+# Sarah
+# Edward
+# Phil
