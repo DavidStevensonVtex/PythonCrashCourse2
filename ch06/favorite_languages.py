@@ -44,3 +44,7 @@ for name in favorite_languages.keys():
 # Hi Edward.
 # Hi Phil.
 #         Phil, I see you love Python
+
+if 'erin' not in favorite_languages.keys():
+    print("\nErin, please take our poll!")
+# Erin, please take our poll!
