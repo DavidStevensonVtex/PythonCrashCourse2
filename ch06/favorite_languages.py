@@ -57,3 +57,13 @@ for name in sorted(favorite_languages.keys()):
 # Jen, thank you for taking the poll.
 # Phil, thank you for taking the poll.
 # Sarah, thank you for taking the poll.
+
+print("\nThe following languages have been mentioned:")
+for language in favorite_languages.values():
+    print(language.title())
+
+# The following languages have been mentioned:
+# Python
+# C
+# Ruby
+# Python
