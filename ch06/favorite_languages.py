@@ -48,3 +48,12 @@ for name in favorite_languages.keys():
 if 'erin' not in favorite_languages.keys():
     print("\nErin, please take our poll!")
 # Erin, please take our poll!
+
+print("\n")
+for name in sorted(favorite_languages.keys()):
+    print(f"{name.title()}, thank you for taking the poll.")
+
+# Edward, thank you for taking the poll.
+# Jen, thank you for taking the poll.
+# Phil, thank you for taking the poll.
+# Sarah, thank you for taking the poll.
