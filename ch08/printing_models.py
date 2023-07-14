@@ -22,5 +22,5 @@ completed_models = []
 # Simulate printing each design, until none are left.
 # Move each design to completed models after printing.
 
-print_models(unprinted_designs, completed_models)
+print_models(unprinted_designs[:], completed_models)
 show_completed_models(completed_models)
