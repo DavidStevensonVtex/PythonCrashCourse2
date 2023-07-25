@@ -1,4 +1,4 @@
-with open('text_files/pi_digits.txt') as file_object:
+with open('pi_million_digits.txt') as file_object:
     lines = file_object.readlines()
 
 pi_string = ''
