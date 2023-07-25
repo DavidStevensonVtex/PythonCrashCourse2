@@ -1,10 +1,9 @@
 filename = 'alice.txt'
 
-with open(filename, encoding='utf-8') as f:
-    contents = f.read()
+try:
+    with open(filename, encoding='utf-8') as f:
+        contents = f.read()
+except FileNotFoundError:
+    print(f"Sorry, the file {filename} does not exist.")
 
-# Traceback (most recent call last):
-#   File "D:\drs\Python\PythonCrashCourse2\ch10\alice.py", line 3, in <module>
-#     with open(filename, encoding='utf-8') as f:
-#          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-# FileNotFoundError: [Errno 2] No such file or directory: 'alice.txt'
+# Sorry, the file alice.txt does not exist.
