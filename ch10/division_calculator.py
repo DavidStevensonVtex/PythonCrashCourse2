@@ -8,13 +8,13 @@ while True:
     second_number = input("Second number: ")
     if second_number == 'q':
         break
-    answer = int(first_number) / int(second_number)
-    print(answer)
+    try:
+        answer = int(first_number) / int(second_number)
+    except:
+        print("You can't divide by 0!")
+    else:
+        print(answer)
 
-# First number: 123
+# First number: 5
 # Second number: 0
-# Traceback (most recent call last):
-#   File "D:\drs\Python\PythonCrashCourse2\ch10\division_calculator.py", line 11, in <module>
-#     answer = int(first_number) / int(second_number)
-#              ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
-# ZeroDivisionError: division by zero
+# You can't divide by 0!
