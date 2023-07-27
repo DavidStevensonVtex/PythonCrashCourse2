@@ -88,21 +88,28 @@ class AlienInvasion:
         """Create the fleet of aliens."""
         # Make an alien.
         alien = Alien(self)
-        alien_width = alien.rect.width
-        full_size_screen_width, y = self.screen.get_size()
+        alien_width, alien_height = alien.rect.size
+        full_size_screen_width, full_size_screen_height = self.screen.get_size()
         available_space_x = full_size_screen_width - (2 * alien_width)
         number_aliens_x = available_space_x // ( 2 * alien_width )
 
-        # Create the first row of aliens.
-        for alien_number in range(number_aliens_x):
-            self._create_alien(alien_number)
+        # Determine the number of rows of aliens that fit on the screen
+        ship_height = self.ship.rect.height
+        available_space_y = full_size_screen_height - ( 3 * alien_height ) - ship_height
+        number_rows = available_space_y // ( 2 * alien_height )
 
-    def _create_alien(self, alien_number):
+        # Create the full fleet of aliens.
+        for row_number in range(number_rows):
+            for alien_number in range(number_aliens_x):
+                self._create_alien(alien_number, row_number)
+
+    def _create_alien(self, alien_number, row_number):
         """Create an alien and place it in the row."""
         alien = Alien(self)
-        alien_width = alien.rect.width
+        alien_width, alien_height = alien.rect.size
         alien.x = alien_width + 2 * alien_width * alien_number
         alien.rect.x = alien.x
+        alien.rect.y =alien_height + 2 * alien.rect.height * row_number
         self.aliens.add(alien)        
 
 if __name__ == '__main__':
