@@ -13,7 +13,9 @@ class AlienInvasion:
         pygame.init()
         self.settings = Settings()
 
-        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
+
         pygame.display.set_caption("Alien Invasion")
 
         self.ship = Ship(self)
@@ -76,6 +78,11 @@ class AlienInvasion:
         # Check for any bullets that have hit aliens.
         # If so, gt rid of the bullet and the alien.
         collisions = pygame.sprite.groupcollide( self.bullets, self.aliens, True, True)
+
+        if not self.aliens:
+            # Destroy existing ubllets and create new fleet.
+            self.bullets.empty()
+            self._create_fleet()
 
     def _update_aliens(self):
         """
