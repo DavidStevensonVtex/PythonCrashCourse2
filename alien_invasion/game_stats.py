@@ -9,3 +9,6 @@ class GameStats:
     def reset_stats(self):
         """Initialize statitics that can change during the game."""
         self.ships_left = self.settings.ship_limit
+
+        # Start game in an inactive state.
+        self.game_active = False
