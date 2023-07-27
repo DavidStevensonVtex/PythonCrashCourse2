@@ -15,7 +15,7 @@ class Alien(Sprite):
 
         # Load the alien image near the top left of the screen
         self.rect.x = self.rect.width
-        self.rect.y = self.rec.height
+        self.rect.y = self.rect.height
 
         # Store the alien's exacxt horizontal position.
         self.x = float(self.rect.x)
