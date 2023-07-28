@@ -1,0 +1,8 @@
+python -m pip install --user matplotlib
+
+$ which python
+/c/Program Files/Python311/python
+
+$ python --version
+Python 3.11.4
+
