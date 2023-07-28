@@ -129,13 +129,13 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points
             self.sb.prep_score()
+            self.sb.check_high_score()
 
         if not self.aliens:
             # Destroy existing ubllets and create new fleet.
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
-
 
     def _update_aliens(self):
         """
