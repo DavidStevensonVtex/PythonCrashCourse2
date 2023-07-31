@@ -141,3 +141,20 @@ class Entry(models.Model):
         """Return a string representation of the model."""
         return f"{self.text[:50]}..."
 ```
+
+### Migrating the Entry Model
+
+```
+$ python manage.py makemigrations learning_logs
+Migrations for 'learning_logs':
+  learning_logs\migrations\0002_entry.py
+    - Create model Entry
+```
+
+```
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, learning_logs, sessions
+Running migrations:
+  Applying learning_logs.0002_entry... OK
+```
