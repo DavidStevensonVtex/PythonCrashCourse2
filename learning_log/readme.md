@@ -514,3 +514,32 @@ Changes to learning_log/learning_logs/urls.py
     # Page for adding a new entry
     path("new_entry/<int:topic_id>/", views.new_entry, name="new_entry"),
 ```
+
+#### The new_entry() View Function
+
+Changes to learning_log/learning_logs/views.py
+
+```
+from learning_logs.forms import TopicForm, EntryForm
+
+def new_entry(request, topic_id):
+    """Add a new entry for a particular topic."""
+    topic = Topic.objects.get(id=topic_id)
+
+    if request.method != "POST":
+        # No ddata submitted; create a blank form.
+        form = EntryForm()
+    else:
+        # POST data submitted; process data.
+        form = EntryForm(data=request.POST)
+        if form.is_valid():
+            new_entry = form.save(commit=False)
+            new_entry.topic = topic
+            new_entry.save()
+            return redirect("learning_logs:topic", topic_id=topic_id)
+
+    # Display a blank for invalid form.
+    context = {"topic": topic, "form": form}
+    return render(request, "learning_logs/new_entry.html", context)
+
+```
