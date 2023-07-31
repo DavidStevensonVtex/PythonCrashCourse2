@@ -449,3 +449,24 @@ def new_topic(request):
     context = {"form": form}
     return render(request, "learning_logs/new_topic.html", context)
 ```
+
+#### GET and POST Requests
+
+#### The new_topic Template
+
+learning_log/learning_logs/templates/learning_logs/new_topic.html
+
+```
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+<p>Add a new topic.</p>
+
+<form action="{% url 'learning_logs:new_topic' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add topic</button>
+</form>
+
+{% endblock content %}
+```
