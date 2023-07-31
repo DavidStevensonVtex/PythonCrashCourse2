@@ -616,3 +616,25 @@ def edit_entry(request, entry_id):
     return render(request, "learning_logs/edit_entry.html", context)
 
 ```
+
+#### The edit_entry Template
+
+learning_log/learning_logs/templates/learning_logs/edit_entry.html
+
+```
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+<p><a href="{ url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+
+<p>Edit entry:</p>
+
+<form action="{% url 'learning_logs:edit_entry' entry.id %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name=""submit">Save changes</button>
+</form>
+
+{% endblock content %}
+```
