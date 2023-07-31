@@ -264,3 +264,17 @@ The contents of learning_logs/templates/learning_logs/base.html
 ```
 
 #### The Child Template
+
+```
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+<p>
+  Learning Log helps you keep track of your learning, for any topic you're
+  learning about.
+</p>
+
+{% endblock content %}
+
+```
