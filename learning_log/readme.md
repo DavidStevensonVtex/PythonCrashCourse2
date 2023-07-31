@@ -490,3 +490,18 @@ learning_log/learning_logs/templates/learning_logs/topics.html change:
 
 {% endblock content %}
 ```
+
+### Adding New Entries
+
+### The Entry ModelForm
+
+learning_log/learning_logs/forms.py added code
+
+```
+class EntryForm(froms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = ["text"]
+        labels = {"text": ""}
+        widgets = {"text": forms.Textarea(attrs={"cols": 80})}
+```
