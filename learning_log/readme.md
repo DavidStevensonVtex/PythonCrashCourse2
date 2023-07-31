@@ -427,3 +427,25 @@ urlpatterns = [
 ]
 
 ```
+
+#### The new_topic() View Function
+
+learning_log/learning_logs/views.py
+
+```
+def new_topic(request):
+    """Add a new topic."""
+    if request.method != "POST":
+        # No data submitted; create a blank form.
+        form = TopicForm()
+    else:
+        # POST data submitted; process data.
+        form = TopicForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("learning_logs:topics")
+
+    # Display a blank or invalid form.
+    context = {"form": form}
+    return render(request, "learning_logs/new_topic.html", context)
+```
