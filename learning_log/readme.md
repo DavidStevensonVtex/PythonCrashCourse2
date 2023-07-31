@@ -579,3 +579,14 @@ Changes to learning_log/learning_logs/templates/learning_logs/topic.html
     <a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
 </p>
 ```
+
+### Editing Entries
+
+#### The edit_entry URL
+
+Addition for learning_log/learning_logs/urls.py
+
+```
+    # Page for editing an entry.
+    path("edit_entry/<int:entry_id>/", views.edit_entry, name="edit_entry"),
+```
