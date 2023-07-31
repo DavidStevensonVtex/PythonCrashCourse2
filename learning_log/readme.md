@@ -158,3 +158,52 @@ Operations to perform:
 Running migrations:
   Applying learning_logs.0002_entry... OK
 ```
+
+### Registering Entry with the Admin Site
+
+Modify the admin.py file as follows:
+
+```
+from django.contrib import admin
+from learning_logs.models import Topic, Entry
+
+admin.site.register(Topic)
+admin.site.register(Entry)
+```
+
+![](AddingAnEntryForTheChessTopic.JPG)
+
+### The Django Shell
+
+```
+$ python manage.py shell
+Python 3.11.4 (tags/v3.11.4:d2340ef, Jun  7 2023, 05:45:37) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from learning_logs.models import Topic
+>>> Topic.objects.all()
+<QuerySet [<Topic: Chess>, <Topic: Rock Climbing>]>
+>>> topics = Topic.objects.all()
+>>> for topic in topics:
+...     print(topic.id, topic)
+...
+1 Chess
+2 Rock Climbing
+>>> t = Topic.objects.get(id=1)
+>>> t.text
+'Chess'
+>>> t.date_added
+datetime.datetime(2023, 7, 31, 15, 44, 29, 839993, tzinfo=datetime.timezone.utc)
+>>> t.entry_set.all()
+<QuerySet [<Entry: The opening is the first part of the game, roughly...>]>
+```
+
+## Making Pages: The Learning Log Home Page
+
+Making web pages with Django consists of three stages:
+
+1. defining URLs
+1. Writing views
+1. Writing templates
+
+You can do these in any order, but starting with defining the ULR pattern may be best.
