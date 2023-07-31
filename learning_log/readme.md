@@ -392,3 +392,25 @@ learning_log/learning_logs/templates/learning_logs/topic.html
 
 {% endblock content %}
 ```
+
+# Chapter 19: User Accounts
+
+## Allowing Users to Enter Data
+
+### Adding New Topics
+
+#### The Topic ModelForm
+
+learning_log/learning_logs/forms.py
+
+```
+from django import forms
+from learning_logs.models import Topic
+
+
+class TopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = ["text"]
+        labels = {"text": ""}
+```
