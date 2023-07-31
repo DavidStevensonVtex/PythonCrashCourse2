@@ -114,3 +114,7 @@ Bypass password validation and create user anyway? [y/N]: y
 Superuser created successfully.
 (.venv)
 ```
+
+### Registering a Model with the Admin Site
+
+Open admin.py in the learning_logs folder.
