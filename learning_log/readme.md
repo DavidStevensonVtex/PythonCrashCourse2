@@ -566,3 +566,16 @@ learning_log/learning_logs/templates/learning_logs/new_entry.html
 
 {% endblock content %}
 ```
+
+#### Linking to the new_entry Page
+
+Changes to learning_log/learning_logs/templates/learning_logs/topic.html
+
+```
+<p>Topic: {{ topic }} </p>
+
+<p>Entries:</p>
+<p>
+    <a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
+</p>
+```
