@@ -414,3 +414,16 @@ class TopicForm(forms.ModelForm):
         fields = ["text"]
         labels = {"text": ""}
 ```
+
+#### The new_topic URL
+
+learning_log/learning_logs/urls.py
+
+```
+...
+urlpatterns = [
+...
+    path("new_topic/", views.new_topic, name="new_topic"),
+]
+
+```
