@@ -337,3 +337,18 @@ learning_log/learning_logs/templates/learning_logs/topics.html
 
 {% endblock content %}
 ```
+
+### Invidual Topic Pages
+
+#### The Topic URL Pattern
+
+learning_log/learning_logs/urls.py
+
+```
+...
+urlpatterns = [
+...
+    # Detail page for a single topic.
+    path("topics/<int:topic_id>/", views.topic, name="topic"),
+]
+```
