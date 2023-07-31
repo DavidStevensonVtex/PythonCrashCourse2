@@ -95,3 +95,22 @@ python manage.py makemigrations learning_logs
 Apply the migration (learning_logs/migrations/001_initial.py) using the following command:
 
 python manage.py migrate
+
+## The Django Admin Site
+
+### Setting Up a Superuser
+
+To create a superuser in Django, enter the following command and enter the required information:
+
+```
+$ python manage.py createsuperuser
+Username (leave blank to use 'drste'): ll_admin
+Email address:
+Password:
+Password (again):
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+(.venv)
+```
