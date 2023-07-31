@@ -78,4 +78,20 @@ class Topic(models.Model):
 
 ## Activating Models
 
-Open _settings.py_ in the learning_log/learning_log directory.
+Open _settings.py_ in the learning*log/learning_log directory. Modify \_settings.py* as follows:
+
+```
+INSTALLED_APPS = [
+    # My apps
+    'learning_logs',
+
+    # Default Django apps.
+```
+
+Tell Django to modify the database so it can store information about the topic.
+
+python manage.py makemigrations learning_logs
+
+Apply the migration (learning_logs/migrations/001_initial.py) using the following command:
+
+python manage.py migrate
