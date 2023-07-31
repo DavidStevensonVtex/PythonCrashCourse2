@@ -223,3 +223,15 @@ urlpatterns = [
 ```
 
 ### Writing a View
+
+The modifications to learning_logs/views.py are as follows:
+
+```
+from django.shortcuts import render
+
+def index(request):
+    """The home page for Learning Log."""
+    return render(request, 'learning_logs/index.html')
+```
+
+### Writing a Template
