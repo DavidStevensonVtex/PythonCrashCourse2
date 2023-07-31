@@ -300,6 +300,8 @@ urlpatterns = [
 
 #### The Topics View
 
+learning_log/learning_logs/urls.py
+
 ```
 from django.shortcuts import render
 from learning_logs.models import Topic
@@ -312,4 +314,26 @@ def topics(request):
     context = {"topics": topics}
     return render(request, "learning_logs/topics.html", context)
 
+```
+
+#### The Topics Template
+
+learning_log/learning_logs/templates/learning_logs/topics.html
+
+```
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+<p>Topics</p>
+
+<ul>
+    {% for topic in topics %}
+        <li>{{ topic }}</li>
+    {% empty %}
+        <li>No topics have been added yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
 ```
