@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from learning_logs.models import Topic
+from learning_logs.models import Topic, Entry
 from learning_logs.forms import TopicForm, EntryForm
 
 
@@ -59,3 +59,22 @@ def new_entry(request, topic_id):
     # Display a blank for invalid form.
     context = {"topic": topic, "form": form}
     return render(request, "learning_logs/new_entry.html", context)
+
+
+def edit_entry(request, entry_id):
+    """Edit an existing entry."""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if request.method != "POST":
+        # Initial request; pre-fil form with the current enntry.
+        form = EntryForm(instance=entry)
+    else:
+        # PSOT data submitted; process data.
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("learning_logs:topic", topic_id=topic.id)
+
+    context = {"entry": entry, "topic": topic, "form": form}
+    return render(request, "learning_logs/edit_entry.html", context)

@@ -590,3 +590,29 @@ Addition for learning_log/learning_logs/urls.py
     # Page for editing an entry.
     path("edit_entry/<int:entry_id>/", views.edit_entry, name="edit_entry"),
 ```
+
+
+#### The edit_entry() View Function
+
+learning_log/learning_logs/views.py
+
+```
+def edit_entry(request, entry_id):
+    """Edit an existing entry."""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if request.method != "POST":
+        # Initial request; pre-fil form with the current enntry.
+        form = EntryForm(instance=entry)
+    else:
+        # PSOT data submitted; process data.
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("learning_logs:topic", topic_id=topic.id)
+
+    context = {"entry": entry, "topic": topic, "form": form}
+    return render(request, "learning_logs/edit_entry.html", context)
+
+```
