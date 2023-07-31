@@ -221,3 +221,5 @@ urlpatterns = [
     path('', include('learning_logs.urls'))
 ]
 ```
+
+### Writing a View
