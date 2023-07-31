@@ -207,3 +207,17 @@ Making web pages with Django consists of three stages:
 1. Writing templates
 
 You can do these in any order, but starting with defining the ULR pattern may be best.
+
+### Mapping a URL
+
+The contents of the urls.py file, after the learning_logs line is added:
+
+```
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('learning_logs.urls'))
+]
+```
