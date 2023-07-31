@@ -281,7 +281,7 @@ The contents of learning_logs/templates/learning_logs/base.html
 
 ### The Topics Page
 
-### The Topics URL Pattern
+#### The Topics URL Pattern
 
 ```
 """Defines URL patterns for learning logs."""
@@ -289,11 +289,27 @@ The contents of learning_logs/templates/learning_logs/base.html
 from django.urls import path
 from . import views
 
-app_name = 'learning_logs'
+app_name = "learning_logs"
 urlpatterns = [
     # Home page
-    path('', views.index, name='index')
+    path("", views.index, name="index"),
     # Page that shows all topics.
-    path('topics/', views.topics, name='topics')
+    path("topics/", views.topics, name="topics"),
 ]
+```
+
+#### The Topics View
+
+```
+from django.shortcuts import render
+from learning_logs.models import Topic
+
+...
+
+def topics(request):
+    """Show all topics."""
+    topics = Topic.objects.order_by("date_added")
+    context = {"topics": topics}
+    return render(request, "learning_logs/topics.html", context)
+
 ```
