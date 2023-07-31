@@ -235,3 +235,32 @@ def index(request):
 ```
 
 ### Writing a Template
+
+The contents of learning_logs/templates/learning_logs/index.html
+
+```
+<p>Learning Log</p>
+
+<p>
+  Learning Log helps you keep track of your learning, for any topic you're
+  learning about.
+</p>
+```
+
+## Building Additional Pages
+
+### Template Inheritance
+
+#### The Parent Template
+
+The contents of learning_logs/templates/learning_logs/base.html
+
+```
+<p>
+    <a href=""{% url 'learning_logs:index' %}">Learning Log</a>
+</p>
+
+{% block content %}{% endblock content %}
+```
+
+#### The Child Template
