@@ -505,3 +505,12 @@ class EntryForm(froms.ModelForm):
         labels = {"text": ""}
         widgets = {"text": forms.Textarea(attrs={"cols": 80})}
 ```
+
+#### The new_entry URL
+
+Changes to learning_log/learning_logs/urls.py
+
+```
+    # Page for adding a new entry
+    path("new_entry/<int:topic_id>/", views.new_entry, name="new_entry"),
+```
