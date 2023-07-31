@@ -470,3 +470,23 @@ learning_log/learning_logs/templates/learning_logs/new_topic.html
 
 {% endblock content %}
 ```
+
+#### Linking to the new_topic Page
+
+learning_log/learning_logs/templates/learning_logs/topics.html change:
+
+```
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+<p>Topics</p>
+
+<ul>
+    -- snip
+</ul>
+
+<a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
+
+{% endblock content %}
+```
