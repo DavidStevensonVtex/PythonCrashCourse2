@@ -33,3 +33,49 @@ ls learning_log
 ## Creating the Database
 
 python manage.py migrate
+
+Running the ls command shows that Django created another file called db.sqlite3.
+
+## Viewing the Project
+
+python manage.py runserver
+
+## Starting an App
+
+A Django project is organized as a group of individual apps that work toether to make
+the project work as a whole.
+
+Leave the development server running and open a new terminal window.
+
+source .venv/Scripts/activate
+
+python manage.py startapp learning_logs
+
+## Defining Models
+
+Open the file models.py.
+
+```
+from django.db import models
+
+# Create your models here.
+```
+
+A module called models is being imported and we can create our models here.
+
+```
+from django.db import models
+
+class Topic(models.Model):
+    """A topic the user is learning about."""
+    text = models.CharField(max_length=200)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        """Return a string representation of the model."""
+        return self.text
+```
+
+## Activating Models
+
+Open _settings.py_ in the learning_log/learning_log directory.
