@@ -17,6 +17,6 @@ def register(request):
             login(request, new_user)
             return redirect('learning_logs:index')
         
-        # Display a b lank or invalid form.
-        context = { 'form': form }
-        return render(request, 'registration/register.html')
+    # Display a b lank or invalid form.
+    context = { 'form': form }
+    return render(request, 'registration/register.html', context)
