@@ -673,3 +673,15 @@ INSTALLED_APPS = [
     'learning_logs',
     'users',
 ```
+
+#### Including the URLs from users
+
+Changes to urls.py
+
+```
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('users.urls')),
+    path('', include('learning_logs.urls')),
+]
+```
