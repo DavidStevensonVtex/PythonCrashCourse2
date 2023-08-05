@@ -10,7 +10,7 @@ edit existing entries.
 
 ## Creating a Virtual Environment
 
-python -m venv .venv
+python -m venv .venvhi
 
 source .venv/Scripts/activate
 
@@ -655,4 +655,12 @@ learning_log/learning_logs/templates/learning_logs/topic.html
     {% empty %}
         <li>There are no entries for this topic yet.</li>
     {% endfor %}
+```
+
+### Setting Up User Accounts
+
+#### The users App
+
+```
+python manage.py startapp users
 ```
