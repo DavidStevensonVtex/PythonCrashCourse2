@@ -752,3 +752,15 @@ learning_log/learning_logs/templates/learning_logs/base.html
         <a href="{% url 'users:login' %}">Log in</a>
     {% endif %}
 ```
+
+#### The Logout Confirmation Page
+
+learning_log/users/templates/registration/logged_out.html
+
+```
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+<p> You have been logged out. Thank you for visiting.</p>
+{% endblock content %}
+```
