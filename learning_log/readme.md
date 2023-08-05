@@ -815,3 +815,23 @@ def register(request):
         context = { 'form': form }
         return render(request, 'registration/register.html')
 ```
+
+#### The register template
+
+users/templates/registeration/register.html
+
+```
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button name="submit">Register</button>
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+    </form>
+
+{% endblock content %}
+```
