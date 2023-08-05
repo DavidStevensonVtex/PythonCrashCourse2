@@ -764,3 +764,25 @@ learning_log/users/templates/registration/logged_out.html
 <p> You have been logged out. Thank you for visiting.</p>
 {% endblock content %}
 ```
+
+### The Registration Page
+
+#### The register URL
+
+users/urls.py
+
+```
+"""Defines URL patterns for users"""
+
+from django.urls import path, include
+
+from . import views
+
+app_name = 'users'
+urlpatterns = [ 
+    # Include default auth urls.
+    path('', include('django.contrib.auth.urls'))
+    # Registration page.
+    path('register/', views.register, name='register')
+]
+```
