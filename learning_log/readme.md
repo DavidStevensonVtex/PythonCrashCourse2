@@ -664,3 +664,12 @@ learning_log/learning_logs/templates/learning_logs/topic.html
 ```
 python manage.py startapp users
 ```
+
+#### Adding users to settings.py
+
+```
+INSTALLED_APPS = [
+    # My apps
+    'learning_logs',
+    'users',
+```
