@@ -685,3 +685,19 @@ urlpatterns = [
     path('', include('learning_logs.urls')),
 ]
 ```
+
+### The Login Page
+
+adding users/urls.py
+
+```
+"""Defines URL patterns for users"""
+
+from django.urls import path, include
+
+app_name = 'users'
+urlpatterns = [ 
+    # Include default auth urls.
+    path('', include('django.contrib.auth.urls'))
+]
+```
