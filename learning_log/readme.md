@@ -701,3 +701,39 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls'))
 ]
 ```
+
+[Using the Django authentication system](https://docs.djangoproject.com/en/4.2/topics/auth/default/)
+
+#### The login template
+
+learning_log/users/templates/registration/login.html
+
+```
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<form method="post" action="{% url 'users:login' %}">
+    {% csrf token %}
+    {{ form.as_p }}
+
+    <button name="submit">Log in</button>
+    <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+</form>
+```
+
+#### Linking to the Login Page
+
+learning_logs\templates\learning_logs\base.html
+
+```
+    {% if user.is_authenticated %}
+        Hello, 
+    {% else %}
+        <a href="{% url 'users:login' %}">Log in</a>
+    {% endif %}
+```
