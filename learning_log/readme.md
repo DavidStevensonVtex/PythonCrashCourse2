@@ -737,3 +737,18 @@ learning_logs\templates\learning_logs\base.html
         <a href="{% url 'users:login' %}">Log in</a>
     {% endif %}
 ```
+
+### Logging Out
+
+#### Adding a Logout Link to base.html
+
+learning_log/learning_logs/templates/learning_logs/base.html
+
+```
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}
+        <a href="{% url 'users:logout' %}">Log out</a>
+    {% else %}
+        <a href="{% url 'users:login' %}">Log in</a>
+    {% endif %}
+```
