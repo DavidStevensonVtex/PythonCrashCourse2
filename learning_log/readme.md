@@ -912,3 +912,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 Chess ll_admin
 Rock Climbing ll_admin
 ```
+
+### Restricting Topics Access to Approriate Users
+
