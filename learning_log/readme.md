@@ -855,3 +855,60 @@ learning_log/learning_logs/templates/learning_logs/base.html
 
 {% block content %}{% endblock content %}
 ```
+
+#### Identifying existing users
+
+```
+$ python manage.py shell
+Python 3.11.4 (tags/v3.11.4:d2340ef, Jun  7 2023, 05:45:37) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from django.contrib.auth.models import User
+>>> User.objects.all()
+<QuerySet [<User: ll_admin>]>
+>>> for user in User.objects.all():
+...     print(user.username, user.id)
+... 
+ll_admin 1
+```
+
+#### Migrating the database
+
+```
+$ python manage.py makemigrations learning_logs
+It is impossible to add a non-nullable field 'owner' to topic without specifying a default. This is because the database needs something to populate existing rows.
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit and manually define a default value in models.py.
+Select an option: 1
+Please enter the default value as valid Python.
+The datetime and django.utils.timezone modules are available, so it is possible to provide e.g. timezone.now as a value.
+Type 'exit' to exit this prompt
+>>> 1
+Migrations for 'learning_logs':
+  learning_logs\migrations\0003_topic_owner.py
+    - Add field owner to topic
+```
+
+```
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, learning_logs, sessions
+Running migrations:
+  Applying learning_logs.0003_topic_owner... OK
+```
+
+Verify that the migration worked as expected.
+
+```
+$ python manage.py shell
+Python 3.11.4 (tags/v3.11.4:d2340ef, Jun  7 2023, 05:45:37) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from learning_logs.models import Topic
+>>> for topic in Topic.objects.all():
+...     print(topic, topic.ownerd)
+... 
+Chess ll_admin
+Rock Climbing ll_admin
+```
