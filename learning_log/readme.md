@@ -907,7 +907,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 >>> from learning_logs.models import Topic
 >>> for topic in Topic.objects.all():
-...     print(topic, topic.ownerd)
+...     print(topic, topic.owner)
 ... 
 Chess ll_admin
 Rock Climbing ll_admin
